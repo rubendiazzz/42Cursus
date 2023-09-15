@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   is_negative.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 15:09:24 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/13 15:39:25 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/15 11:16:45 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/09/15 12:27:49 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int	is_negative(char c)
 {
-	void	*tmp;
+	int	neg;
 
-	tmp = b;
-	while (len--)
-		*(char *)b++ = (unsigned char)c;
-	return (tmp);
+	neg = 0;
+	if (c == '-')
+	{
+		neg = 1;
+	}
+	return (neg);
 }
