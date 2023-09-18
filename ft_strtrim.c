@@ -1,34 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 17:31:44 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/18 10:20:04 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/18 15:51:37 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/09/18 15:51:47 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	void	*ret;
-
-	if (!dst && !src)
-		return (0);
-	ret = dst;
-	while (n--)
-		*(char *)dst++ = *(char *)src++;
-	return (ret);
-}
-
-/*int	main()
-{
-	char	orig[] = "ABCDE";
-	char	orig2[] = "ABCDE";
-	char	dest[] = "abcde";
-	char	dest2[] = "abcde";
-	printf("%s\n", ft_memcpy(dest, orig, 7));
-}*/

@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 11:10:20 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/17 13:17:07 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:50:02 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,10 @@ int	ft_atoi(const char *str)
 	}
 	return (res * neg);
 }
-
-/*
-int	main(void)
+/*int	main(void)
 {
 	printf("Atoi original: %i", atoi("  -42")); // DEBUG ATOI ORIGINAL
 	printf("\n");
 	printf("Atoi propio: %i", ft_atoi("  -42")); // DEBUG MI ATOI
 	return (0);
-}
-*/
+}*/

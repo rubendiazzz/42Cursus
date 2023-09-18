@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:18:47 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/17 14:57:10 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/18 15:46:12 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int		is_negative(char c);
 //ADICIONALES LIBFT_H
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
