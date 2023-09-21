@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:29:59 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/18 10:35:30 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:31:14 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		src += len - 1;
 		while (len--)
 		*(char *)dst-- = *(char *)src--;
-	}
+	}		
 	return (tmp);
 }
