@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 15:18:17 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/21 16:57:03 by rdiaz-fr      ###   ########.fr       */
+/*   Created: 2023/09/21 16:58:38 by rdiaz-fr       #+#    #+#             */
+/*   Updated: 2023/09/21 16:58:38 by rdiaz-fr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*Applies the function ’f’ to each character of the
+string ’s’, and passing its index as first argument
+to create a new string (with malloc(3)) resulting
+from successive applications of ’f’*/
+
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned
+int, char))
 {
-	unsigned char	*str;
-	size_t			i;
+	char	*str;
+	int		i;
 
-	str = (unsigned char *)s;
 	i = 0;
-	while (i < n)
+	if (!s || !f)
+		return (NULL);
+	str = ft_strdup(s);
+	if (!str)
+		return (NULL);
+	while (str[i])
 	{
-		if (str[i] == (unsigned char)c)
-			return ((void *)&str[i]);
+		str[i] = f(i, str[i]);
 		i++;
 	}
-	return (NULL);
+	return (str);
 }
