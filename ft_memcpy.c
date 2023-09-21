@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:31:44 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/20 12:01:55 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/21 18:57:07 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	void	*ret;
+	char		*tmp_dst;
+	const char	*tmp_src;
 
-	if (!dst && !src)
-		return (0);
-	ret = dst;
+	tmp_dst = (char *)dst;
+	tmp_src = (const char *)src;
+	if (!tmp_dst || !tmp_src)
+		return (NULL);
 	while (n--)
-		*(char *)dst++ = *(char *)src++;
-	return (ret);
+	{
+		*tmp_dst++ = *tmp_src++;
+	}
+	return (dst);
 }
 
 /*int	main()
