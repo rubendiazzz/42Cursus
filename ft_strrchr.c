@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ruubendiazz <ruubendiazz@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 14:50:18 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/13 15:19:45 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:43:00 by ruubendiazz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	while (s[i])
 		i++;
