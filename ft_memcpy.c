@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:31:44 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/21 18:57:07 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/22 10:31:48 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,19 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char		*tmp_dst;
-	const char	*tmp_src;
+	size_t		i;
+	char		*dp;
+	char		*sp;
 
-	tmp_dst = (char *)dst;
-	tmp_src = (const char *)src;
-	if (!tmp_dst || !tmp_src)
+	i = 0;
+	dp = (char *)dst;
+	sp = (char *)src;
+	if (dst == NULL && src == NULL)
 		return (NULL);
-	while (n--)
+	while (i < n)
 	{
-		*tmp_dst++ = *tmp_src++;
+		dp[i] = sp[i];
+		i++;
 	}
 	return (dst);
 }
-
-/*int	main()
-{
-	char	orig[] = "ABCDE";
-	char	orig2[] = "ABCDE";
-	char	dest[] = "abcde";
-	char	dest2[] = "abcde";
-	printf("%s\n", ft_memcpy(dest, orig, 7));
-}*/
