@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:18:47 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/22 12:28:06 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:23:45 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}				t_list;
-
-typedef struct s_split_next
-{
-	size_t	start;
-	size_t	length;
-}				t_split_next;
+}	t_list;
 
 //LIBFT OBLIGS
 
@@ -82,5 +76,6 @@ void	ft_putnbr_fd(int n, int fd);
 //BONUS
 
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
