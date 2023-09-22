@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:18:47 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/22 12:11:47 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:28:06 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,20 @@
 # include <string.h>
 # include <stdio.h>
 # include <unistd.h>
+
+//STRUCTURES
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
+
+typedef struct s_split_next
+{
+	size_t	start;
+	size_t	length;
+}				t_split_next;
 
 //LIBFT OBLIGS
 
@@ -64,5 +78,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+//BONUS
+
+t_list	*ft_lstnew(void *content);
 
 #endif
