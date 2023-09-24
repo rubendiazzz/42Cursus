@@ -6,7 +6,7 @@
 #    By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/13 12:31:04 by rdiaz-fr          #+#    #+#              #
-#    Updated: 2023/09/24 19:39:16 by rdiaz-fr         ###   ########.fr        #
+#    Updated: 2023/09/24 19:43:18 by rdiaz-fr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
 OBJS			= $(SRCS:.c=.o)
 
 BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-					ft_lstdelone.c ft_lstclear.c
+					ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= gcc
