@@ -16,7 +16,11 @@ static int	ft_numlen(int n)
 {
 	int	len;
 
-	len = (n <= 0 ? 1 : 0);
+	len = 0;
+	if (n <= 0)
+	{
+		len = 1;
+	}
 	while (n != 0)
 	{
 		n /= 10;
@@ -42,10 +46,13 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 		nbr = -nbr;
 	}
-	while (len > 0 && str[len - 1] != '-')
+	while (len > 0)
 	{
-		str[len - 1] = (nbr % 10) + '0';
-		nbr /= 10;
+		if (str[len - 1] != '-')
+		{
+			str[len - 1] = (nbr % 10) + '0';
+			nbr /= 10;
+		}
 		len--;
 	}
 	return (str);
