@@ -12,58 +12,41 @@
 
 #include "libft.h"
 
-static int	ft_intlen(long n)
+static int	ft_numlen(int n)
 {
-	int		len;
+	int	len;
 
-	len = 0;
-	if (n < 0)
+	len = (n <= 0 ? 1 : 0);
+	while (n != 0)
 	{
-		len++;
-		n = -n;
-	}
-	if (n == 0)
-		len++;
-	while (n > 0)
-	{
-		n = n / 10;
+		n /= 10;
 		len++;
 	}
 	return (len);
-}
-
-static char	*ft_fillstr(char *str, long n, int len)
-{
-	int		i;
-
-	i = 0;
-	if (n < 0)
-	{
-		str[i] = '-';
-		n = -n;
-		i++;
-	}
-	if (n == 0)
-		str[i] = '0';
-	while (n > 0)
-	{
-		str[len - 1] = (n % 10) + '0';
-		n = n / 10;
-		len--;
-	}
-	return (str);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*str;
 	int		len;
+	long	nbr;
 
-	len = ft_intlen(n);
+	nbr = n;
+	len = ft_numlen(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	str[len] = '\0';
-	str = ft_fillstr(str, (long)n, len);
+	if (nbr < 0)
+	{
+		str[0] = '-';
+		nbr = -nbr;
+	}
+	while (len > 0 && str[len - 1] != '-')
+	{
+		str[len - 1] = (nbr % 10) + '0';
+		nbr /= 10;
+		len--;
+	}
 	return (str);
 }
