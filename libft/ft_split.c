@@ -12,92 +12,34 @@
 
 #include "libft.h"
 
-static size_t	ft_countword(char const *s, char c)
+char **ft_split(char const *s, char c)
 {
-	size_t	count;
-	int		in_word;
-
-	if (c == '\0')
-		return (1);
-	count = 0;
-	in_word = 0;
-	while (*s)
-	{
-		if (*s != c && !in_word)
-		{
-			in_word = 1;
-			count++;
-		}
-		else if (*s == c)
-			in_word = 0;
-		s++;
-	}
-	return (count);
-}
-
-static void	free_memory(char **lst, int i)
-{
-	while (i >= 0)
-	{
-		free(lst[i]);
-		i--;
-	}
-	free(lst);
-}
-
-static int	allocate_single_word(char **lst, int i, const char **s, char c)
-{
-	size_t	word_len;
-
-	if (c == '\0')
-		word_len = ft_strlen(*s);
-	else if (ft_strchr(*s, c))
-		word_len = ft_strchr(*s, c) - *s;
-	else
-		word_len = ft_strlen(*s);
-	lst[i] = ft_substr(*s, 0, word_len);
-	if (!lst[i])
-	{
-		free_memory(lst, i - 1);
-		return (0);
-	}
-	*s += word_len;
-	return (1);
-}
-
-static int	allocate_words(char **lst, const char *s, char c)
-{
-	int	i;
+	int 	j; // COUNTER VAR 
+	int 	i; // INDEX VAR
+	int 	length_of_str;
+	void 	allocator;
 
 	i = 0;
-	while (*s)
+	counter = 0;
+	length_of_str = ft_strlen (s); // I set the value of strlen(s) to length_of_str variable.
+	while (s[i] != '\0') // Loop to see if the s[i] is equal to 'c', if it is, it gets out, if not, i++;
 	{
-		while (*s == c && *s && c != '\0')
-			s++;
-		if (*s == '\0')
-			break ;
-		if (!allocate_single_word(lst, i, &s, c))
-			return (0);
-		i++;
-		while (*s == c && c != '\0')
-			s++;
+		if (s[i] == c)
+			return ;
+		else if (s[i] != c)
+			i++;
 	}
-	return (1);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**lst;
-	size_t	word_count;
-
-	if (!s)
-		return (NULL);
-	word_count = ft_countword(s, c);
-	lst = malloc((word_count + 1) * sizeof(char *));
-	if (!lst)
-		return (NULL);
-	if (allocate_words(lst, s, c) == 0)
-		return (NULL);
-	lst[word_count] = NULL;
-	return (lst);
+	allocator = ft_calloc((s[i] + 1) * sizeof(char *)); // Allocate memory with ft_calloc for the number of substring of char pointers.
+	i = 0;
+	j = length_of_str - 1;
+	while (length_of_str != NULL)
+	{
+		ft_split[i][j];
+		i++;
+		j--;
+		if (ft_split[i][j] == c)
+		{
+			ft_substr(s, s[i], length_of_str);
+		}
+	}
 }
