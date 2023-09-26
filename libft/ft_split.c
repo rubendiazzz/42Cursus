@@ -6,40 +6,79 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:41:32 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/25 18:33:39 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:03:22 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char **ft_split(char const *s, char c)
+int	count_substrings(char const *s, char c)
 {
-	int 	j; // COUNTER VAR 
-	int 	i; // INDEX VAR
-	int 	length_of_str;
-	void 	allocator;
+	int	i;
+	int	count;
+	int	in_substring;
 
 	i = 0;
-	counter = 0;
-	length_of_str = ft_strlen (s); // I set the value of strlen(s) to length_of_str variable.
-	while (s[i] != '\0') // Loop to see if the s[i] is equal to 'c', if it is, it gets out, if not, i++;
+	count = 0;
+	in_substring = 0;
+	while (s[i] != '\0')
 	{
-		if (s[i] == c)
-			return ;
-		else if (s[i] != c)
-			i++;
-	}
-	allocator = ft_calloc((s[i] + 1) * sizeof(char *)); // Allocate memory with ft_calloc for the number of substring of char pointers.
-	i = 0;
-	j = length_of_str - 1;
-	while (length_of_str != NULL)
-	{
-		ft_split[i][j];
-		i++;
-		j--;
-		if (ft_split[i][j] == c)
+		if (s[i] != c && in_substring == 0)
 		{
-			ft_substr(s, s[i], length_of_str);
+			in_substring = 1;
+			count++;
 		}
+		else if (s[i] == c)
+		{
+			in_substring = 0;
+		}
+		i++;
 	}
+	return (count);
+}
+
+char	**allocate_memory(int count)
+{
+	char	**allocator;
+
+	allocator = (char **)ft_calloc((count + 1), sizeof(char *));
+	if (allocator == NULL)
+		return (NULL);
+	return (allocator);
+}
+
+void	fill_substrings(char **allocator, char const *s, char c)
+{
+	int	i;
+	int	j;
+	int	start;
+
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		start = i;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		if (i > start)
+			allocator[j++] = ft_substr(s, start, i - start);
+	}
+	allocator[j] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		count;
+	char	**allocator;
+
+	if (s == NULL)
+		return (NULL);
+	count = count_substrings(s, c);
+	allocator = allocate_memory(count);
+	if (allocator == NULL)
+		return (NULL);
+	fill_substrings(allocator, s, c);
+	return (allocator);
 }
