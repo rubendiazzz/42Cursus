@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:41:32 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/26 16:03:22 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/27 12:05:59 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,19 @@ char	**allocate_memory(int count)
 	return (allocator);
 }
 
+void	free_memory(char **allocator)
+{
+	int	i;
+
+	i = 0;
+	while (allocator[i] != NULL)
+	{
+		free(allocator[i]);
+		i++;
+	}
+	free(allocator);
+}
+
 void	fill_substrings(char **allocator, char const *s, char c)
 {
 	int	i;
@@ -80,5 +93,6 @@ char	**ft_split(char const *s, char c)
 	if (allocator == NULL)
 		return (NULL);
 	fill_substrings(allocator, s, c);
+	free_memory(allocator);
 	return (allocator);
 }
