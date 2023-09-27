@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 19:42:37 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/27 18:59:18 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/27 19:12:11 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_elem;
+	t_list	*data;
 
 	new_list = NULL;
 	while (lst)
 	{
-		new_elem = ft_lstnew(f(lst->content));
+		data = f(lst->content);
+		new_elem = ft_lstnew(data);
 		if (!new_elem)
 		{
+			free(data);
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
