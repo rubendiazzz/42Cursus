@@ -12,54 +12,45 @@
 
 #include "libft.h"
 
-static char	*ft_array(char *x, unsigned int number, long int len)
+size_t	ft_nb_len(int nb)
 {
-	while (number > 0)
-	{
-		x[len--] = 48 + (number % 10);
-		number = number / 10;
-	}
-	return (x);
-}
-
-static long int	ft_len(int n)
-{
-	int					len;
+	int	len;
 
 	len = 0;
-	if (n <= 0)
-		len = 1;
-	while (n != 0)
+	if (nb <= 0)
+		len++;
+	while (nb)
 	{
 		len++;
-		n = n / 10;
+		nb = nb / 10;
 	}
 	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	char				*x;
-	long int			len;
-	unsigned int		number;
-	int					sign;
+	int		len;
+	char	*str;
+	long	nb;
 
-	sign = 1;
-	len = ft_len(n);
-	x = (char *)malloc(sizeof(char) * (len + 1));
-	if (!(x))
+	len = ft_nb_len(n);
+	nb = n;
+	str = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 		return (NULL);
-	x[len--] = '\0';
-	if (n == 0)
-		x[0] = '0';
-	if (n < 0)
+	if (nb < 0)
 	{
-		sign *= -1;
-		number = n * -1;
-		x[0] = '-';
+		str[0] = '-';
+		nb = -nb;
 	}
-	else
-		number = n;
-	x = ft_array(x, number, len);
-	return (x);
+	if (nb == 0)
+		str[0] = '0';
+	str[len--] = '\0';
+	while (nb)
+	{
+		str[len] = nb % 10 + '0';
+		len--;
+		nb = nb / 10;
+	}
+	return (str);
 }
