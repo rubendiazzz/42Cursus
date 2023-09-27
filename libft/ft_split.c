@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:41:32 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/27 12:09:28 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/27 18:22:44 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	**allocate_memory(int count)
 	return (allocator);
 }
 
-void	fill_substrings(char **allocator, char const *s, char c)
+int	fill_substrings(char **allocator, char const *s, char c)
 {
 	int	i;
 	int	j;
@@ -63,9 +63,30 @@ void	fill_substrings(char **allocator, char const *s, char c)
 		while (s[i] != c && s[i] != '\0')
 			i++;
 		if (i > start)
+		{
 			allocator[j++] = ft_substr(s, start, i - start);
+			if (allocator[j] == NULL)
+				return (-1);
+			j++;
+		}
 	}
 	allocator[j] = NULL;
+	return (0);
+}
+
+void	free_mem(char **allocator)
+{
+	int	i;
+
+	i = 0;
+	if (allocator == NULL)
+		return ;
+	while (allocator[i] != NULL)
+	{
+		free(allocator[i]);
+		i++;
+	}
+	free(allocator);
 }
 
 char	**ft_split(char const *s, char c)
@@ -79,6 +100,10 @@ char	**ft_split(char const *s, char c)
 	allocator = allocate_memory(count);
 	if (allocator == NULL)
 		return (NULL);
-	fill_substrings(allocator, s, c);
+	if (fill_substrings(allocator, s, c) == -1)
+	{
+		free_mem(allocator);
+		return (NULL);
+	}
 	return (allocator);
 }
