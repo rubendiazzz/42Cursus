@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:41:32 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/27 18:22:44 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/27 18:33:34 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	fill_substrings(char **allocator, char const *s, char c)
 			i++;
 		if (i > start)
 		{
-			allocator[j++] = ft_substr(s, start, i - start);
+			allocator[j] = ft_substr(s, start, i - start);
 			if (allocator[j] == NULL)
 				return (-1);
 			j++;
