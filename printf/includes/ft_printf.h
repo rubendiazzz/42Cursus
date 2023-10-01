@@ -1,7 +1,9 @@
-#ifndef LIBFT_PRINTF_H
-# define LIBFT_PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
 # include "../libft/libft.h"
 # include <stdarg.h>
 
+int	ft_printf(const	char *, ...);
 
+#endif

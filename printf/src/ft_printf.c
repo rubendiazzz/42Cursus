@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ruubendiazz <rdiaz-fr@student.42malaga.com>+#+  +:+       +#+        */
+/*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:15:42 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/25 13:15:45 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/01 16:33:03 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "libftprintf.h"
+#include "../includes/libftprintf.h"
 
-
+int	ft_printf(const	char *, ...)
+{
+	
+}
