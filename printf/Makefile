@@ -1,8 +1,5 @@
-SRCS			= ft_printf.c	
+SRCS			= ../printf/src/ft_printf.c	
 OBJS			= $(SRCS:.c=.o)
-
-BONUS			=	
-BONUS_OBJS		= $(BONUS:.c=.o)
 
 CC				= gcc
 RM				= rm -f
