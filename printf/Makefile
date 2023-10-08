@@ -3,36 +3,44 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+         #
+#    By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/04 12:11:41 by rdiaz-fr          #+#    #+#              #
-#    Updated: 2023/10/04 12:11:41 by rdiaz-fr         ###   ########.fr        #
+#    Updated: 2023/10/05 12:57:12 by rdiaz-fr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= ../printf/src/ft_printf.c	
-OBJS			= $(SRCS:.c=.o)
+SRCS	= src/ft_printf.c src/handle_format.c src/handle_string.c \
+	  src/count_digits.c src/handle_char.c src/handle_hex.c \
+	  src/handle_integer.c src/handle_pointer.c src/handle_unsigned.c \
+	  src/count_hex_digits.c
 
-CC				= gcc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+OBJS	= $(SRCS:.c=.o)
 
-NAME			= libftprintf.a
+CC	= gcc
+RM	= rm -f
+CFLAGS	= -Wall -Wextra -Werror -Iincludes -Ilibft
 
-all:			$(NAME)
+NAME	= libftprintf.a
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+LIBFT	= libft/libft.a
+
+all:	$(LIBFT) $(NAME)
+
+$(LIBFT):
+	make -C libft
+
+$(NAME):	$(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS)
+	make -C libft clean
 
-fclean:			clean
-				$(RM) $(NAME)
+fclean:	clean
+	$(RM) $(NAME)
+	make -C libft fclean
 
-re:				fclean $(NAME)
+re:	fclean all
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
-.PHONY:			all clean fclean re bonus
+.PHONY:	all clean fclean re

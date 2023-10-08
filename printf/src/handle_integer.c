@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   handle_integer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:10:42 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/04 12:32:40 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/05 12:45:18 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "../includes/ft_printf.h"
+#include "../libft/libft.h"
 
 int	check_base(char *base)
 {
@@ -40,7 +40,8 @@ int	check_base(char *base)
 	return (1);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+int	handle_integer(int num)
 {
-	
+	ft_putnbr_base(num, "0123456789");
+	return (count_digits(num));
 }

@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   handle_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 14:27:48 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/05 11:52:57 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/10/05 11:32:51 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/10/05 11:33:29 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft/libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	handle_char(char c)
 {
-	char	*str;
-	int		i;
-	int		j;
-
-	if (!s1 || !s2)
-		return (NULL);
-	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!str)
-		return (NULL);
-	i = -1;
-	while (s1[++i])
-		str[i] = s1[i];
-	j = -1;
-	while (s2[++j])
-		str[i + j] = s2[j];
-	str[i + j] = 0;
-	return (str);
+	ft_putchar_fd(c, 1);
+	return (1);
 }
