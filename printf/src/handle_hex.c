@@ -18,3 +18,4 @@ int	handle_hex(unsigned int num, char *base)
 	ft_putnbr_base(num, base);
 	return (count_hex_digits(num));
 }
+
