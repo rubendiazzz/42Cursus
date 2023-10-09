@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_negative.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 11:16:45 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/15 12:27:49 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/23 13:09:17 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/10/09 15:04:39 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_negative(char c)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	int	neg;
-
-	neg = 0;
-	if (c == '-')
-	{
-		neg = 1;
-	}
-	return (neg);
+	del(lst->content);
+	free(lst);
 }

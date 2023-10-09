@@ -6,55 +6,104 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:41:32 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/21 18:24:32 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/27 18:33:34 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_countword(char const *s, char c)
+int	count_substrings(char const *s, char c)
 {
-	size_t	count;
+	int	i;
+	int	count;
+	int	in_substring;
 
-	if (!*s)
-		return (0);
+	i = 0;
 	count = 0;
-	while (*s)
+	in_substring = 0;
+	while (s[i] != '\0')
 	{
-		while (*s == c)
-			s++;
-		if (*s)
+		if (s[i] != c && in_substring == 0)
+		{
+			in_substring = 1;
 			count++;
-		while (*s != c && *s)
-			s++;
+		}
+		else if (s[i] == c)
+		{
+			in_substring = 0;
+		}
+		i++;
 	}
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char	**allocate_memory(int count)
 {
-	char	**lst;
-	size_t	word_len;
-	int		i;
+	char	**allocator;
 
-	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
-	if (!s || !lst)
-		return (0);
+	allocator = (char **)ft_calloc((count + 1), sizeof(char *));
+	if (allocator == NULL)
+		return (NULL);
+	return (allocator);
+}
+
+int	fill_substrings(char **allocator, char const *s, char c)
+{
+	int	i;
+	int	j;
+	int	start;
+
 	i = 0;
-	while (*s)
+	j = 0;
+	while (s[i] != '\0')
 	{
-		while (*s == c && *s)
-			s++;
-		if (*s)
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		start = i;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		if (i > start)
 		{
-			if (!ft_strchr(s, c))
-				word_len = ft_strlen(s);
-			else
-				word_len = ft_strchr(s, c) - s;
-			lst[i++] = ft_substr(s, 0, word_len);
-			s += word_len;
+			allocator[j] = ft_substr(s, start, i - start);
+			if (allocator[j] == NULL)
+				return (-1);
+			j++;
 		}
 	}
-	lst[i] = NULL;
-	return (lst);
+	allocator[j] = NULL;
+	return (0);
+}
+
+void	free_mem(char **allocator)
+{
+	int	i;
+
+	i = 0;
+	if (allocator == NULL)
+		return ;
+	while (allocator[i] != NULL)
+	{
+		free(allocator[i]);
+		i++;
+	}
+	free(allocator);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		count;
+	char	**allocator;
+
+	if (s == NULL)
+		return (NULL);
+	count = count_substrings(s, c);
+	allocator = allocate_memory(count);
+	if (allocator == NULL)
+		return (NULL);
+	if (fill_substrings(allocator, s, c) == -1)
+	{
+		free_mem(allocator);
+		return (NULL);
+	}
+	return (allocator);
 }

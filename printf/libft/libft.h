@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:18:47 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/24 19:52:24 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/09/27 18:47:07 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,6 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
-//PROPIAS
-
-int		is_negative(char c);
-
 //ADICIONALES LIBFT_H
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -83,6 +79,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f) (void *), void (*del) (void *));
-
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif
