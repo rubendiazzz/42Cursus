@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_unsigned.c                                  :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 11:42:56 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/10 16:32:50 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/10/10 16:46:53 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/10/10 16:50:12 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../libft/libft.h"
+#include "libft.h"
 
-int	handle_unsigned(unsigned int num)
+void	ft_putchar(char c)
 {
-	ft_putnbr_base(num, "0123456789");
-	return (count_digits(num));
+	write(1, &c, 1);
 }

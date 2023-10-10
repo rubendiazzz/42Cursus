@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/10 16:27:08 by rdiaz-fr          #+#    #+#              #
-#    Updated: 2023/10/10 16:27:09 by rdiaz-fr         ###   ########.fr        #
+#    Created: 2023/10/10 16:42:19 by rdiaz-fr          #+#    #+#              #
+#    Updated: 2023/10/10 16:51:24 by rdiaz-fr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,9 @@ GREEN=\033[0;32m
 NC=\033[0m # No Color
 
 # Source and object files
-SRCS	=	src/ft_printf.c src/handle_format.c src/handle_string.c \
-			src/count_digits.c src/handle_char.c src/handle_hex.c \
-			src/handle_integer.c src/handle_pointer.c src/handle_unsigned.c \
-			src/count_hex_digits.c
+SRCS	=	src/ft_printf.c src/handle_format.c src/handle_string.c src/count_digits.c \
+			src/handle_char.c src/handle_hex.c src/handle_integer.c src/handle_pointer.c \
+			src/handle_unsigned.c src/count_hex_digits.c src/ft_putnbr_base.c src/check_base.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -47,7 +46,9 @@ $(LIBFT):
 
 $(NAME): $(OBJS)
 	@echo "$(GREEN)Creating Archive $(NAME)$(NC)"
-	@ar rcs $(NAME) $(OBJS)
+	@ar -x $(LIBFT)
+	@ar -rcs $(NAME) $(OBJS) *.o
+	@rm *.o
 
 clean:
 	@echo "$(RED)Removing Object Files$(NC)"

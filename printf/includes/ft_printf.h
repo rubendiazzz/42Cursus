@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:08:48 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/10 16:16:34 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/10 16:52:13 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,13 @@ int		count_hex_digits(unsigned long n);
  * @param base Base characters for conversion
  */
 void	ft_putnbr_base(int nbr, char *base);
+
+/**
+ * @brief Check the base for putnbr_base.
+ * 
+ * @param base 
+ * @return int 
+ */
+int		check_base(char *base);
 
 #endif
