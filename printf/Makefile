@@ -5,42 +5,60 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/04 12:11:41 by rdiaz-fr          #+#    #+#              #
-#    Updated: 2023/10/09 16:42:32 by rdiaz-fr         ###   ########.fr        #
+#    Created: 2023/10/10 16:27:08 by rdiaz-fr          #+#    #+#              #
+#    Updated: 2023/10/10 16:27:09 by rdiaz-fr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# Color codes
+RED=\033[0;31m
+GREEN=\033[0;32m
+NC=\033[0m # No Color
+
+# Source and object files
 SRCS	=	src/ft_printf.c src/handle_format.c src/handle_string.c \
-	  		src/count_digits.c src/handle_char.c src/handle_hex.c \
-	  		src/handle_integer.c src/handle_pointer.c src/handle_unsigned.c \
-	  		src/count_hex_digits.c
+			src/count_digits.c src/handle_char.c src/handle_hex.c \
+			src/handle_integer.c src/handle_pointer.c src/handle_unsigned.c \
+			src/count_hex_digits.c
 
 OBJS	=	$(SRCS:.c=.o)
 
-CC		= 	gcc
-RM		= 	rm -f
-CFLAGS	= 	-Wall -Wextra -Werror -Iincludes -Ilibft
+# Compiler and flags
+CC		= gcc
+RM		= rm -f
+CFLAGS	= -Wall -Wextra -Werror -Iincludes -Ilibft
 
-NAME	= 	libftprintf.a
+# Project name
+NAME	= libftprintf.a
 
-LIBFT	= 	libft/libft.a
+# Dependency libraries
+LIBFT	= libft/libft.a
 
-all:	$(LIBFT) $(NAME)
+# Main targets
+all: $(LIBFT) $(NAME)
+
+# To prevent relinking, specify the dependency between object files and source files
+%.o: %.c
+	@echo "$(GREEN)Compiling $<$(NC)"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
-	make -C libft
+	@make -C libft
 
-$(NAME):	$(OBJS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	@echo "$(GREEN)Creating Archive $(NAME)$(NC)"
+	@ar rcs $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS)
-	make -C libft clean
+	@echo "$(RED)Removing Object Files$(NC)"
+	@$(RM) $(OBJS)
+	@make -C libft clean
 
-fclean:	clean
-	$(RM) $(NAME)
-	make -C libft fclean
+fclean: clean
+	@echo "$(RED)Removing Library $(NAME)$(NC)"
+	@$(RM) $(NAME)
+	@make -C libft fclean
 
-re:	fclean all
+re: fclean all
 
-.PHONY:	all clean fclean re
+.PHONY: all clean fclean re

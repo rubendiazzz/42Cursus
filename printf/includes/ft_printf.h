@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 15:08:48 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/09 16:51:46 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/10 16:16:34 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,104 +14,98 @@
 # define FT_PRINTF_H
 
 # include "../libft/libft.h"
+# include <limits.h>
 # include <stdarg.h>
 # include <unistd.h>
-# include <limits.h>
 
 /**
- * @brief This is a replica of the function printf in C standard library.
- * 
- * @param format 
- * @param ... 
- * @return int 
+ * @brief Mimics the functionality of the standard C library's printf function.
+ *
+ * @param format Formatting string
+ * @param ... Variable number of arguments
+ * @return int Number of characters printed
  */
 int		ft_printf(const char *format, ...);
 
 /**
- * @brief This function will help with the format specifiers and 
- * looking for what type are them.
- * 
- * @param specifier 
- * @param args 
- * @return int 
+ * @brief Processes format specifiers and identifies their corresponding types.
+ *
+ * @param specifier Format specifier character
+ * @param args Variable argument list
+ * @return int Number of characters processed
  */
 int		handle_format(char specifier, va_list args);
 
 /**
- * @brief This function will handle the behaviour of printf
- * when a string is passed.
- * 
- * @param str 
- * @return int 
+ * @brief Manages string arguments in printf-compatible behavior.
+ *
+ * @param str String to print
+ * @return int Number of characters printed
  */
 int		handle_string(char *str);
 
 /**
- * @brief This functions will handle the behavior of printf
- * when an only char is passed.
- * 
- * @param c 
- * @return int 
+ * @brief Manages character arguments in printf-compatible behavior.
+ *
+ * @param c Character to print
+ * @return int Number of characters printed
  */
 int		handle_char(char c);
 
 /**
- * @brief This function will handle the behavior when a %p or
- * pointer is passed.
- * 
- * @param ptr 
- * @return int 
+ * @brief Manages pointer arguments, specifically for %p format specifier.
+ *
+ * @param ptr Pointer to print
+ * @return int Number of characters printed
  */
 int		handle_pointer(void *ptr);
 
 /**
- * @brief This function will handle the behavior of printf when 
- * an integer is passed.
- * 
- * @param num 
- * @return int 
+ * @brief Manages integer arguments in printf-compatible behavior.
+ *
+ * @param num Integer to print
+ * @return int Number of characters printed
  */
 int		handle_integer(int num);
 
 /**
- * @brief This function will handle the behavior of printf when
- * an unsigned is passed.
- * 
- * @param num 
- * @return int 
+ * @brief Manages unsigned integer arguments in printf-compatible behavior.
+ *
+ * @param num Unsigned integer to print
+ * @return int Number of characters printed
  */
 int		handle_unsigned(unsigned int num);
 
 /**
- * @brief This function will handle the behavior of printf when
- * a HEX is passed.
- * 
- * @param num 
- * @param base 
- * @return int 
+ * @brief Manages hexadecimal arguments in printf-compatible behavior.
+ *
+ * @param num Unsigned integer to convert to hexadecimal
+ * @param base Base characters for hexadecimal conversion
+ * @return int Number of characters printed
  */
 int		handle_hex(unsigned int num, char *base);
+
 /**
- * @brief This function will just count the digits passed.
- * 
- * @param n 
- * @return int 
+ * @brief Counts the digits in an integer.
+ *
+ * @param n Integer to evaluate
+ * @return int Number of digits
  */
 int		count_digits(int n);
 
 /**
- * @brief This function will handle the count of all the HEX digits.
- * 
- * @param n 
- * @return int 
+ * @brief Counts the digits in a hexadecimal number.
+ *
+ * @param n Unsigned long number to evaluate
+ * @return int Number of hexadecimal digits
  */
 int		count_hex_digits(unsigned long n);
 
 /**
- * @brief This function is the function putnbr but it handles bases.
- * 
- * @param nbr 
- * @param base 
+ * @brief Prints an integer in a specified base.
+ *
+ * @param nbr Integer to print
+ * @param base Base characters for conversion
  */
 void	ft_putnbr_base(int nbr, char *base);
 
