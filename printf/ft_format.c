@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:07:46 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/11 16:17:04 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/11 17:17:55 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 
 void	ft_putchar(char c, int *count)
 {
-	write(1, &c, 1);
+	if (c != 0)
+		write(1, &c, 1);
+	else
+		write(1, "\0", 2);
 	(*count)++;
 }
 
@@ -24,13 +27,9 @@ void	ft_putstr(const char *str, int *count)
 {
 	if (str == NULL)
 	{
-		ft_putstr("(null)", count);
+		write(1, "(null)", 6);
+		(*count) += 6;
 		return ;
-	}
-	while (*str)
-	{
-		ft_putchar(*str, count);
-		str++;
 	}
 }
 
