@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:41:32 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/27 18:33:34 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/14 14:38:14 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ int	count_substrings(char const *s, char c)
 			count++;
 		}
 		else if (s[i] == c)
-		{
 			in_substring = 0;
-		}
 		i++;
 	}
 	return (count);
