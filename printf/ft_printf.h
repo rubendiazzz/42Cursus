@@ -6,13 +6,14 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:09:13 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/11 16:41:37 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:10:34 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include <stdio.h>
 # include <stdarg.h>
 # include <stdint.h>
 # include <stdlib.h>
