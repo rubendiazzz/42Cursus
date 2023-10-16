@@ -2,7 +2,6 @@
 
 int main()
 {
-  char a = 'b';
-  printf("%c %c %c \n", a, a, a);
-  ft_printf("%c %c %c \n", a, a, a);
+  printf("libft42");
+  ft_printf("libft42");
 }
