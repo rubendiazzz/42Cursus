@@ -3,14 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:08:34 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/16 17:39:56 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/17 12:38:08 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	tmp;
+
+	tmp = 0;
+	while (*s++)
+		++tmp;
+	return (tmp);
+}
 
 void	handle_format(char specifier, va_list args, int *count)
 {
