@@ -6,4 +6,3 @@
 
             - Proyectos actuales -
         Libft       Printf      get_next_line
-    |___________||__________||_________________|
