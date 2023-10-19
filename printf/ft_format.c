@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:07:46 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/17 12:42:55 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/19 10:35:29 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
-#include <unistd.h>
 
 void	ft_putchar(char c, int *count)
 {
