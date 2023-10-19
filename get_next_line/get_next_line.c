@@ -6,11 +6,14 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:43:02 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/17 18:36:18 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/19 14:21:32 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 10000000
+#endif
 
 char	*ft_free(char *buffer, char *buf)
 {
