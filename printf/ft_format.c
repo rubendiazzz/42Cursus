@@ -6,115 +6,79 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:07:46 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/23 16:20:47 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:06:08 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c, int *count)
+int	ft_putchar(char c)
 {
-	ssize_t	bytes_written;
-
-	bytes_written = write(1, &c, 1);
-	if (bytes_written == -1)
-		exit(EXIT_FAILURE);
-	(*count)++;
+	write(1, &c, 1);
+	return (1);
 }
 
-void	ft_putstr(const char *str, int *count)
+int	ft_putstr(const char *str)
 {
-	ssize_t	bytes_written;
+	int	local_count;
 
+	local_count = 0;
 	if (str == NULL)
 	{
-		bytes_written = write(1, "(null)", 6);
-		if (bytes_written == -1)
-		{
-			exit(EXIT_FAILURE);
-		}
-		(*count) += 6;
-		return ;
+		write(1, "(null)", 6);
+		return (6);
 	}
 	while (*str)
 	{
-		ft_putchar(*str, count);
+		local_count += ft_putchar(*str);
 		str++;
 	}
+	return (local_count);
 }
 
-void	ft_putnbr(long n, int *count)
+int	ft_putnbr(long n)
 {
-	int		i;
-	char	*buffer;
+	int	local_count;
 
-	buffer = (char *)malloc(21 * sizeof(char));
-	if (buffer == NULL)
-		exit(EXIT_FAILURE);
+	local_count = 0;
 	if (n == 0)
-	{
-		ft_putchar('0', count);
-		free(buffer);
-		return ;
-	}
+		return (ft_putchar('0'));
 	if (n < 0)
 	{
-		ft_putchar('-', count);
+		local_count += ft_putchar('-');
 		n = -n;
 	}
-	i = 0;
-	while (n > 0)
-	{
-		buffer[i++] = (n % 10) + '0';
-		n /= 10;
-	}
-	while (--i >= 0)
-		ft_putchar(buffer[i], count);
-	free(buffer);
+	if (n >= 10)
+		local_count += ft_putnbr(n / 10);
+	local_count += ft_putchar((n % 10) + '0');
+	return (local_count);
 }
 
-void	fill_buffer(char *buffer, uintptr_t n, int is_uppercase)
+int	ft_puthex(uintptr_t n, int is_uppercase, int include_prefix)
 {
-	int		i;
+	int		local_count;
 	char	hex_digit;
 
-	i = 0;
-	while (n > 0)
-	{
-		hex_digit = n % 16;
-		if (hex_digit > 9)
-		{
-			if (is_uppercase)
-				buffer[i] = 'A' + hex_digit - 10;
-			else
-				buffer[i] = 'a' + hex_digit - 10;
-		}
-		else
-			buffer[i] = '0' + hex_digit;
-		i++;
-		n /= 16;
-	}
-	buffer[i] = '\0';
-}
-
-void	ft_puthex(uintptr_t n, int is_uppercase, int *count, int include_prefix)
-{
-	char	buffer[20];
-	int		i;
-
+	local_count = 0;
 	if (n == 0)
 	{
 		if (include_prefix)
-			ft_putstr("0x", count);
-		ft_putchar('0', count);
-		return ;
+			local_count += ft_putstr("0x");
+		return (local_count + ft_putchar('0'));
 	}
-	fill_buffer(buffer, n, is_uppercase);
 	if (include_prefix)
-		ft_putstr("0x", count);
-	i = 0;
-	while (buffer[i] != '\0')
-		i++;
-	while (--i >= 0)
-		ft_putchar(buffer[i], count);
+		local_count += ft_putstr("0x");
+	if (n >= 16)
+		local_count += ft_puthex(n / 16, is_uppercase, 0);
+	hex_digit = n % 16;
+	if (hex_digit > 9)
+	{
+		if (is_uppercase)
+			local_count += ft_putchar('A' + hex_digit - 10);
+		else
+			local_count += ft_putchar('a' + hex_digit - 10);
+	}
+	else
+		local_count += ft_putchar('0' + hex_digit);
+	return (local_count);
 }
