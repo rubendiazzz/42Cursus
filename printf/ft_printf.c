@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:08:34 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/23 17:07:14 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:15:33 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ size_t	ft_strlen(const char *s)
 
 	tmp = 0;
 	while (*s++)
+	{
 		++tmp;
+	}
 	return (tmp);
 }
 
@@ -61,9 +63,7 @@ int	ft_printf(const char *format, ...)
 			count += handle_format(*format, args);
 		}
 		else
-		{
 			count += ft_putchar(*format);
-		}
 		format++;
 	}
 	va_end(args);

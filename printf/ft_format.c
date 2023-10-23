@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:07:46 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/23 17:06:08 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:13:41 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,18 @@ int	ft_putnbr(long n)
 
 	local_count = 0;
 	if (n == 0)
+	{
 		return (ft_putchar('0'));
+	}
 	if (n < 0)
 	{
 		local_count += ft_putchar('-');
 		n = -n;
 	}
 	if (n >= 10)
+	{
 		local_count += ft_putnbr(n / 10);
+	}
 	local_count += ft_putchar((n % 10) + '0');
 	return (local_count);
 }
