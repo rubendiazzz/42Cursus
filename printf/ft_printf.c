@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 16:08:34 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/17 12:38:08 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/10/23 16:21:36 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/10/23 16:21:37 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,22 @@ size_t	ft_strlen(const char *s)
 	return (tmp);
 }
 
+void	handle_char(va_list args, int *count)
+{
+	ft_putchar(va_arg(args, int), count);
+}
+
+void	handle_string(va_list args, int *count)
+{
+	ft_putstr(va_arg(args, char *), count);
+}
+
 void	handle_format(char specifier, va_list args, int *count)
 {
 	if (specifier == 'c')
-		ft_putchar(va_arg(args, int), count);
+		handle_char(args, count);
 	else if (specifier == 's')
-		ft_putstr(va_arg(args, char *), count);
+		handle_string(args, count);
 	else if (specifier == 'p')
 		ft_puthex((uintptr_t)va_arg(args, void *), 0, count, 1);
 	else if (specifier == 'd' || specifier == 'i')
@@ -57,7 +67,9 @@ int	ft_printf(const char *format, ...)
 			handle_format(*format, args, &count);
 		}
 		else
+		{
 			ft_putchar(*format, &count);
+		}
 		format++;
 	}
 	va_end(args);
