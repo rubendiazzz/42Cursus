@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10000000
+# define BUFFER_SIZE 32
 #endif
 
 char	*ft_free(char *buffer, char *buf)
@@ -97,11 +97,14 @@ char	*read_file(int fd, char *res)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer = {NULL};
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, buffer, 0) < 0)
+	{
+		free(buffer);
 		return (NULL);
+	}	
 	buffer = read_file(fd, buffer);
 	if (!buffer)
 		return (NULL);
