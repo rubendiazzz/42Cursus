@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:07:46 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/19 10:35:29 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:20:47 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,25 @@
 
 void	ft_putchar(char c, int *count)
 {
-	if (c != 0)
-		write(1, &c, 1);
-	else
-		write(1, "\0", 2);
+	ssize_t	bytes_written;
+
+	bytes_written = write(1, &c, 1);
+	if (bytes_written == -1)
+		exit(EXIT_FAILURE);
 	(*count)++;
 }
 
 void	ft_putstr(const char *str, int *count)
 {
+	ssize_t	bytes_written;
+
 	if (str == NULL)
 	{
-		write(1, "(null)", 6);
+		bytes_written = write(1, "(null)", 6);
+		if (bytes_written == -1)
+		{
+			exit(EXIT_FAILURE);
+		}
 		(*count) += 6;
 		return ;
 	}
@@ -39,11 +46,15 @@ void	ft_putstr(const char *str, int *count)
 void	ft_putnbr(long n, int *count)
 {
 	int		i;
-	char	buffer[20];
+	char	*buffer;
 
+	buffer = (char *)malloc(21 * sizeof(char));
+	if (buffer == NULL)
+		exit(EXIT_FAILURE);
 	if (n == 0)
 	{
 		ft_putchar('0', count);
+		free(buffer);
 		return ;
 	}
 	if (n < 0)
@@ -59,6 +70,7 @@ void	ft_putnbr(long n, int *count)
 	}
 	while (--i >= 0)
 		ft_putchar(buffer[i], count);
+	free(buffer);
 }
 
 void	fill_buffer(char *buffer, uintptr_t n, int is_uppercase)
