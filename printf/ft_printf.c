@@ -6,21 +6,11 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 16:08:34 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/24 15:26:26 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/24 15:41:27 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	tmp;
-
-	tmp = 0;
-	while (*s++)
-		++tmp;
-	return (tmp);
-}
 
 int	handle_format(char specifier, va_list args)
 {
