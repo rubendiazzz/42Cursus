@@ -6,22 +6,24 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:42:24 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/24 10:04:40 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:17:38 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <unistd.h>
-#include <stdlib.h>
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 32
+#endif
 
 char	*ft_free(char *buffer, char *buf)
 {
 	char	*temp;
 
 	temp = ft_strjoin(buffer, buf);
-	if (!temp)
-		return (NULL);
-	free(buffer);
+	if (temp)
+	{
+		free(buffer);
+	}
 	return (temp);
 }
 
@@ -40,8 +42,6 @@ char	*ft_next(char *buffer)
 		return (NULL);
 	}
 	line = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
-	if (!line)
-		return (NULL);
 	i++;
 	j = 0;
 	while (buffer[i])
@@ -56,18 +56,18 @@ char	*ft_line(char *buffer)
 	int		i;
 
 	i = 0;
+	if (!buffer[i])
+		return (NULL);
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
 	line = ft_calloc(i + 2, sizeof(char));
-	if (!line)
-		return (NULL);
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
 	{
 		line[i] = buffer[i];
 		i++;
 	}
-	if (buffer[i] == '\n')
+	if (buffer[i] && buffer[i] == '\n')
 		line[i++] = '\n';
 	return (line);
 }
@@ -78,30 +78,24 @@ char	*read_file(int fd, char *res)
 	int		byte_read;
 
 	if (!res)
-	{
 		res = ft_calloc(1, 1);
-		if (!res)
-			return (NULL);
-	}
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	if (!buffer)
-		return (NULL);
-	byte_read = read(fd, buffer, BUFFER_SIZE);
+	byte_read = 1;
 	while (byte_read > 0)
 	{
-		buffer[byte_read] = '\0';
-		res = ft_free(res, buffer);
-		if (!res)
+		byte_read = read(fd, buffer, BUFFER_SIZE);
+		if (byte_read == -1)
+		{
+			free(buffer);
 			return (NULL);
+		}
+		buffer[byte_read] = 0;
+		res = ft_free(res, buffer);
 		if (ft_strchr(buffer, '\n'))
 			break ;
-		byte_read = read(fd, buffer, BUFFER_SIZE);
 	}
 	free(buffer);
-	if (byte_read == -1)
-		return (NULL);
-	else
-		return (res);
+	return (res);
 }
 
 char	*get_next_line(int fd)
@@ -113,13 +107,11 @@ char	*get_next_line(int fd)
 	{
 		free(buffer);
 		return (NULL);
-	}
+	}	
 	buffer = read_file(fd, buffer);
 	if (!buffer)
 		return (NULL);
 	line = ft_line(buffer);
-	if (!line)
-		return (NULL);
 	buffer = ft_next(buffer);
 	return (line);
 }
