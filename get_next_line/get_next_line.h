@@ -6,15 +6,13 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:43:07 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/24 11:14:35 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:44:08 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # include <stdlib.h>
-# include <sys/types.h>
-# include <sys/uio.h>
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
