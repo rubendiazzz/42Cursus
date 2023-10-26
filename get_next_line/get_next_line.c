@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:42:24 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/24 16:54:11 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:07:01 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ char	*ft_free(char *buffer, char *buf)
 
 	temp = ft_strjoin(buffer, buf);
 	if (temp)
-	{
 		free(buffer);
-	}
 	return (temp);
 }
 
@@ -42,6 +40,8 @@ char	*ft_next(char *buffer)
 		return (NULL);
 	}
 	line = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
+	if (line == NULL)
+		return (NULL);
 	i++;
 	j = 0;
 	while (buffer[i])
@@ -61,6 +61,8 @@ char	*ft_line(char *buffer)
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
 	line = ft_calloc(i + 2, sizeof(char));
+	if (line == NULL)
+		return (NULL);
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
 	{
@@ -80,6 +82,8 @@ char	*read_file(int fd, char *res)
 	if (!res)
 		res = ft_calloc(1, 1);
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	if (!buffer)
+		return (NULL);
 	byte_read = 1;
 	while (byte_read > 0)
 	{
@@ -100,14 +104,14 @@ char	*read_file(int fd, char *res)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer = {NULL};
+	static char	*buffer = NULL;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, buffer, 0) < 0)
 	{
 		free(buffer);
 		return (NULL);
-	}	
+	}
 	buffer = read_file(fd, buffer);
 	if (!buffer)
 		return (NULL);
