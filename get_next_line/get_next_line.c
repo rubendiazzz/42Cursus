@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:42:24 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/26 15:16:05 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:51:25 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ char	*read_file(int fd, char *res)
 	if (!res)
 		res = ft_calloc(1, 1);
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	if (!buffer)
+		return (NULL);
 	byte_read = 1;
 	while (byte_read > 0)
 	{
@@ -106,7 +108,11 @@ char	*get_next_line(int fd)
 	}
 	buffer = read_file(fd, buffer);
 	if (!buffer)
+	{
+		free(buffer);
+		buffer = NULL;
 		return (NULL);
+	}
 	line = ft_line(buffer);
 	buffer = ft_next(buffer);
 	return (line);
