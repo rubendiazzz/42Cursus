@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:42:24 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/26 14:51:22 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:16:05 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_free(char *buffer, char *buf)
 	char	*temp;
 
 	temp = ft_strjoin(buffer, buf);
-	if (temp)
+	if (temp && temp != buffer)
 		free(buffer);
 	return (temp);
 }
@@ -101,6 +101,7 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, buffer, 0) < 0)
 	{
 		free(buffer);
+		buffer = NULL;
 		return (NULL);
 	}
 	buffer = read_file(fd, buffer);
