@@ -6,14 +6,11 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:42:24 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/26 12:07:01 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:49:38 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 32
-#endif
 
 char	*ft_free(char *buffer, char *buf)
 {
@@ -40,8 +37,6 @@ char	*ft_next(char *buffer)
 		return (NULL);
 	}
 	line = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
-	if (line == NULL)
-		return (NULL);
 	i++;
 	j = 0;
 	while (buffer[i])
@@ -61,8 +56,6 @@ char	*ft_line(char *buffer)
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
 	line = ft_calloc(i + 2, sizeof(char));
-	if (line == NULL)
-		return (NULL);
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
 	{
@@ -82,8 +75,6 @@ char	*read_file(int fd, char *res)
 	if (!res)
 		res = ft_calloc(1, 1);
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	if (!buffer)
-		return (NULL);
 	byte_read = 1;
 	while (byte_read > 0)
 	{

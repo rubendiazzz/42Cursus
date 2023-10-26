@@ -6,23 +6,11 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 17:44:14 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/26 12:05:52 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:40:20 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	len;
-
-	if (!s)
-		return (0);
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -91,4 +79,17 @@ void	*ft_calloc(size_t count, size_t size)
 		return (NULL);
 	ft_bzero(ptr, count * size);
 	return (ptr);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	len;
+
+	len = 0;
+	while (*s)
+	{
+		len++;
+		s++;
+	}
+	return (len);
 }
