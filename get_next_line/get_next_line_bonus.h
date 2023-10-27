@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 15:22:09 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/26 15:47:20 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/27 12:12:17 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 
 char	*get_next_line(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
