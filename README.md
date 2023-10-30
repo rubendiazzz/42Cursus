@@ -1,28 +1,48 @@
-# Campus 42 Projects ![42 Logo](https://i.redd.it/thj41ymmh0351.gif)
+<div align="center">
+    <img src=".github/readme/banner.png#gh-light-mode-only" alt="Banner (claro)" />
+</div>
 
-> 📌 Repositorio actualizado diaria o semanalmente.
+<br>
+
+Este repositorio contiene todos mis proyectos desarrollados en el Campus 42. Actualizado diaria o semanalmente.
+
+<br>
+
+<div align="center">
+    <a href='https://profile.intra.42.fr/users/rdiaz-fr' target="_blank">
+        <img alt='42 (oscuro)' src='https://img.shields.io/badge/Campus42-black?style=flat&logo=42&logoColor=white'/>
+    </a>
+    <a href="https://wakatime.com/@rdiaz-fr">
+        <img src="https://img.shields.io/badge/wakatime-20 hrs-blue?style=flat&logo=wakatime" alt="Tiempo" />
+    </a>
+</div>
 
 ---
 
-## Introducción
+# Índice de Proyectos
 
-Bienvenido a mi repositorio, donde muestro todos mis proyectos realizados en el Campus 42. Aquí encontrarás una variedad de trabajos que abarcan desde la programación en C hasta sistemas operativos.
-
----
-
-## Índice de Proyectos
-
-1. **[Libft](URL_a_Libft)**
-    - Biblioteca estándar de C.
-    
-2. **[Printf](URL_a_Printf)**
-    - Implementación de la función `printf`.
-
-3. **[Get Next Line](URL_a_Get_Next_Line)**
-    - Una función para leer líneas desde un descriptor de archivo.
-
-4. **[Born2beRoot](URL_a_Born2beRoot)**
-    - Proyecto de administración de sistemas.
+<table>
+  <tr>
+    <th>Proyecto</th>
+    <th>Descripción</th>
+  </tr>
+  <tr>
+    <td><a href="URL_a_Libft">Libft</a></td>
+    <td>Biblioteca estándar de C</td>
+  </tr>
+  <tr>
+    <td><a href="URL_a_Printf">Printf</a></td>
+    <td>Implementación de la función <code>printf</code></td>
+  </tr>
+  <tr>
+    <td><a href="URL_a_Get_Next_Line">Get Next Line</a></td>
+    <td>Función para leer líneas desde un descriptor de archivo</td>
+  </tr>
+  <tr>
+    <td><a href="URL_a_Born2beRoot">Born2beRoot</a></td>
+    <td>Proyecto de administración de sistemas</td>
+  </tr>
+</table>
 
 ---
 
@@ -34,9 +54,9 @@ Si tienes alguna sugerencia o mejora, no dudes en hacer un `fork` y enviar un `p
 
 ## Contacto
 
-👤 **Ruben (Tu nombre completo)**
-- 📧 Correo: tu_email@email.com
-- 💼 LinkedIn: [tu_nombre_en_linkedin](URL_a_tu_LinkedIn)
+👤 **Ruben Diaz Fraga**
+- 📧 Correo: rubendfraga@gmail.com
+- 💼 LinkedIn: [Ruben Diaz Fraga](www.linkedin.com/in/ruubendiazz)
 
 ---
 
