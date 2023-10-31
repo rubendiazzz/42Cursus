@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:42:24 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/10/29 10:44:33 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/10/30 12:47:33 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ char	*ft_next(char *buffer)
 		return (NULL);
 	}
 	line = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
+	if (!line)
+	{
+		free(buffer);
+		return (NULL);
+	}
 	i++;
 	j = 0;
 	while (buffer[i])
