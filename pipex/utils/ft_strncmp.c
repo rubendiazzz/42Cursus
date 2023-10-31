@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/pipex.h"
 
 int	ft_strncmp(const char *str, const char *str2, size_t c)
 {

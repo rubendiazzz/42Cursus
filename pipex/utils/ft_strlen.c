@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/17 13:41:54 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/09/18 13:07:47 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/11 12:43:10 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/09/11 15:08:46 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-char	*ft_strdup(const char *s1)
+size_t	ft_strlen(const char *s)
 {
-	char	*str;
-	size_t	i;
+	size_t	tmp;
 
-	str = (char *)malloc(sizeof(*s1) * (ft_strlen(s1) + 1));
-	if (s1 == NULL || str == NULL)
-		return (NULL);
-	i = 0;
-	while (s1[i] && s1)
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	str[i] = 0;
-	return (str);
+	tmp = 0;
+	while (*s++)
+		++tmp;
+	return (tmp);
 }
