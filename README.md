@@ -59,8 +59,8 @@ Contributions, issues, and feature requests are welcome! Feel free to fork the r
 Feel free to reach out to me if you have any questions or just want to say hi!
 
 👤 **Ruben Diaz Fraga**
-- 📧 Email: rubendfraga@gmail.com
-- 💼 LinkedIn: [Ruben Diaz Fraga](www.linkedin.com/in/ruubendiazz)
+📧 Email: rubendfraga@gmail.com
+💼 LinkedIn: [Ruben Diaz Fraga](www.linkedin.com/in/ruubendiazz)
 
 ## License :scroll:
 
