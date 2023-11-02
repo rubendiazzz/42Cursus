@@ -8,6 +8,7 @@ This repository contains all of my projects developed at Campus 42. It is update
 - [Printf](#printf)
 - [Get Next Line](#get-next-line)
 - [Born2beRoot](#born2beroot)
+- [Pipex](#pipex)
 
 ## Description
 
@@ -19,9 +20,13 @@ Welcome to my Campus 42 Projects repository! Here you will find all the projects
 
 The Libft project is a standard C library that includes many useful functions that are not included in the standard C library. It includes functions for manipulating strings, memory, and other common data types.
 
+#### Grade: 125/100
+
 ### Printf
 
 The Printf project is an implementation of the printf function in C. It includes support for many of the common format specifiers, such as %d, %s, and %f.
+
+#### Grade: 100/100
 
 ### Get Next Line
 
@@ -30,6 +35,12 @@ The Get Next Line project is a function that reads lines from a file descriptor.
 ### Born2beRoot
 
 The Born2beRoot project is a system administration project that involves setting up a virtual machine and configuring various system settings. It includes tasks such as setting up a firewall, configuring network settings, and setting up user accounts.
+
+### Pipex
+
+The Pipex project is a program that simulates the functionality of the shell command pipeline. It takes two file names as arguments and two commands with their arguments. The output of the first command is used as the input for the second command. The program creates a pipeline of two processes, where the output of the first process is connected to the input of the second process.
+
+#### Grade: N/A
 
 ## Contributing
 
