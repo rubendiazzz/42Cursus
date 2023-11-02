@@ -1,5 +1,7 @@
 <div align="center">
 
+![Banner](.github/readme/banner42.gif)
+
 # :mortar_board: Campus 42 Projects
 
 Welcome to my Campus 42 Projects repository! This repository is a collection of all the projects I have developed during my time at Campus 42. Each project is in its own folder, complete with a detailed README file explaining the project's requirements, my approach, and the skills I have acquired.
