@@ -1,8 +1,8 @@
-# Campus 42 Projects
+# Campus 42 Projects :mortar_board:
 
-This repository contains all of my projects developed at Campus 42. It is updated daily or weekly.
+Welcome to my Campus 42 Projects repository! This repository is a collection of all the projects I have developed during my time at Campus 42. Each project is in its own folder, complete with a detailed README file explaining the project's requirements, my approach, and the skills I have acquired.
 
-## Table of Contents
+## Table of Contents :bookmark_tabs:
 
 - [Libft](#libft)
 - [Printf](#printf)
@@ -10,50 +10,46 @@ This repository contains all of my projects developed at Campus 42. It is update
 - [Born2beRoot](#born2beroot)
 - [Pipex](#pipex)
 
-## Description
+## Projects :computer:
 
-Welcome to my Campus 42 Projects repository! Here you will find all the projects I have developed during my time at Campus 42. Each project has its own folder with a detailed README file explaining the project's requirements, my approach, and the skills I have acquired.
+### Libft :books:
 
-## Projects
+Libft is a standard C library that includes many useful functions that are not included in the standard C library. It includes functions for manipulating strings, memory, and other common data types.
 
-### Libft
+**Grade: 125/100** :trophy:
 
-The Libft project is a standard C library that includes many useful functions that are not included in the standard C library. It includes functions for manipulating strings, memory, and other common data types.
+### Printf :page_with_curl:
 
-#### Grade: 125/100
+Printf is an implementation of the printf function in C. It includes support for many of the common format specifiers, such as %d, %s, and %f.
 
-### Printf
+**Grade: 100/100** :trophy:
 
-The Printf project is an implementation of the printf function in C. It includes support for many of the common format specifiers, such as %d, %s, and %f.
+### Get Next Line :page_facing_up:
 
-#### Grade: 100/100
+Get Next Line is a function that reads lines from a file descriptor. It is useful for reading large files or for reading files that are being updated in real-time.
 
-### Get Next Line
+### Born2beRoot :lock:
 
-The Get Next Line project is a function that reads lines from a file descriptor. It is useful for reading large files or for reading files that are being updated in real-time.
+Born2beRoot is a system administration project that involves setting up a virtual machine and configuring various system settings. It includes tasks such as setting up a firewall, configuring network settings, and setting up user accounts.
 
-### Born2beRoot
+### Pipex :wrench:
 
-The Born2beRoot project is a system administration project that involves setting up a virtual machine and configuring various system settings. It includes tasks such as setting up a firewall, configuring network settings, and setting up user accounts.
+Pipex is a program that simulates the functionality of the shell command pipeline. It takes two file names as arguments and two commands with their arguments. The output of the first command is used as the input for the second command. The program creates a pipeline of two processes, where the output of the first process is connected to the input of the second process.
 
-### Pipex
+**Grade: N/A**
 
-The Pipex project is a program that simulates the functionality of the shell command pipeline. It takes two file names as arguments and two commands with their arguments. The output of the first command is used as the input for the second command. The program creates a pipeline of two processes, where the output of the first process is connected to the input of the second process.
+## Contributing :handshake:
 
-#### Grade: N/A
+Contributions, issues, and feature requests are welcome! Feel free to fork the repository and submit a pull request.
 
-## Contributing
+## Contact :mailbox:
 
-If you have any suggestions or improvements, feel free to fork the repository and submit a pull request.
-
-## Contact
-
-If you have any questions or just want to say hi, feel free to reach out to me!
+Feel free to reach out to me if you have any questions or just want to say hi!
 
 👤 **Ruben Diaz Fraga**
 - 📧 Email: rubendfraga@gmail.com
 - 💼 LinkedIn: [Ruben Diaz Fraga](www.linkedin.com/in/ruubendiazz)
 
-## License
+## License :scroll:
 
 This repository is released under the [MIT License](LICENSE).
