@@ -1,16 +1,26 @@
+<div align="center">
+
 # Campus 42 Projects :mortar_board:
 
 Welcome to my Campus 42 Projects repository! This repository is a collection of all the projects I have developed during my time at Campus 42. Each project is in its own folder, complete with a detailed README file explaining the project's requirements, my approach, and the skills I have acquired.
 
+</div>
+
 ## Table of Contents :bookmark_tabs:
 
-- [Libft](#libft)
-- [Printf](#printf)
-- [Get Next Line](#get-next-line)
-- [Born2beRoot](#born2beroot)
-- [Pipex](#pipex)
+| Project | Description |
+|---------|-------------|
+| [Libft](#libft) | A standard C library |
+| [Printf](#printf) | An implementation of the printf function in C |
+| [Get Next Line](#get-next-line) | A function that reads lines from a file descriptor |
+| [Born2beRoot](#born2beroot) | A system administration project |
+| [Pipex](#pipex) | A program that simulates the functionality of the shell command pipeline |
+
+<div align="center">
 
 ## Projects :computer:
+
+</div>
 
 ### Libft :books:
 
@@ -38,6 +48,8 @@ Pipex is a program that simulates the functionality of the shell command pipelin
 
 **Grade: N/A**
 
+<div align="center">
+
 ## Contributing :handshake:
 
 Contributions, issues, and feature requests are welcome! Feel free to fork the repository and submit a pull request.
@@ -53,3 +65,5 @@ Feel free to reach out to me if you have any questions or just want to say hi!
 ## License :scroll:
 
 This repository is released under the [MIT License](LICENSE).
+
+</div>
