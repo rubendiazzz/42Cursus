@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 12:01:51 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/11/02 12:12:32 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/17 13:29:19 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/11/02 12:04:23 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-int	msg(char *err)
+void	*ft_calloc(size_t count, size_t size)
 {
-	write(2, err, ft_strlen(err));
-	return (1);
-}
+	void	*ptr;
 
-void	msg_error(char *err)
-{
-	perror(err);
-	exit(1);
+	if (count == 0 || size == 0)
+		return (malloc(0));
+	ptr = (void *)malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }

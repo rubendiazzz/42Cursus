@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 12:01:51 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/11/02 12:12:32 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/11 15:09:24 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/11/02 12:07:25 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
 
-int	msg(char *err)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	write(2, err, ft_strlen(err));
-	return (1);
-}
+	void	*tmp;
 
-void	msg_error(char *err)
-{
-	perror(err);
-	exit(1);
+	tmp = b;
+	while (len--)
+		*(char *)b++ = (unsigned char)c;
+	return (tmp);
 }

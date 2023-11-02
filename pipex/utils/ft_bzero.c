@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 12:01:51 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/11/02 12:12:32 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/11 15:48:59 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/11/02 12:05:51 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
 #include "../includes/pipex.h"
 
-int	msg(char *err)
+void	ft_bzero(void *s, size_t n)
 {
-	write(2, err, ft_strlen(err));
-	return (1);
-}
-
-void	msg_error(char *err)
-{
-	perror(err);
-	exit(1);
+	ft_memset(s, 0, n);
 }
