@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:42:24 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2023/11/02 13:03:48 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2023/11/02 13:27:37 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,11 @@ char	*ft_line(char *buffer)
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
 	line = ft_calloc(i + 2, sizeof(char));
+	if (!line)
+	{
+		free(buffer);
+		return (NULL);
+	}
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
 	{
@@ -81,9 +86,12 @@ char	*read_file(int fd, char *res)
 		res = ft_calloc(1, 1);
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!buffer)
+	{
+		free(res);
 		return (NULL);
+	}
 	byte_read = 1;
-	while (byte_read > 0)
+	while (byte_read > 0 && !ft_strchr(buffer, '\n'))
 	{
 		byte_read = read(fd, buffer, BUFFER_SIZE);
 		if (byte_read == -1)
@@ -91,10 +99,8 @@ char	*read_file(int fd, char *res)
 			free(buffer);
 			return (NULL);
 		}
-		buffer[byte_read] = 0;
+		buffer[byte_read] = '\0';
 		res = ft_free(res, buffer);
-		if (ft_strchr(buffer, '\n'))
-			break ;
 	}
 	free(buffer);
 	return (res);
