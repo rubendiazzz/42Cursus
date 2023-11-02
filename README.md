@@ -1,63 +1,48 @@
-<div align="center">
-    <img src=".github/readme/banner.png#gh-light-mode-only" alt="Banner (claro)" />
-</div>
+# Campus 42 Projects
 
-<br>
+This repository contains all of my projects developed at Campus 42. It is updated daily or weekly.
 
-Este repositorio contiene todos mis proyectos desarrollados en el Campus 42. Actualizado diaria o semanalmente.
+## Table of Contents
 
-<br>
+- [Libft](#libft)
+- [Printf](#printf)
+- [Get Next Line](#get-next-line)
+- [Born2beRoot](#born2beroot)
 
-<div align="center">
-    <a href='https://profile.intra.42.fr/users/rdiaz-fr' target="_blank">
-        <img alt='42 (oscuro)' src='https://img.shields.io/badge/Campus42-black?style=flat&logo=42&logoColor=white'/>
-    </a>
-    <a href="https://wakatime.com/@rdiaz-fr">
-        <img src="https://img.shields.io/badge/wakatime-20 hrs-blue?style=flat&logo=wakatime" alt="Tiempo" />
-    </a>
-</div>
+## Description
 
----
+Welcome to my Campus 42 Projects repository! Here you will find all the projects I have developed during my time at Campus 42. Each project has its own folder with a detailed README file explaining the project's requirements, my approach, and the skills I have acquired.
 
-# Índice de Proyectos
+## Projects
 
-<table>
-  <tr>
-    <th>Proyecto</th>
-    <th>Descripción</th>
-  </tr>
-  <tr>
-    <td><a href="URL_a_Libft">Libft</a></td>
-    <td>Biblioteca estándar de C</td>
-  </tr>
-  <tr>
-    <td><a href="URL_a_Printf">Printf</a></td>
-    <td>Implementación de la función <code>printf</code></td>
-  </tr>
-  <tr>
-    <td><a href="URL_a_Get_Next_Line">Get Next Line</a></td>
-    <td>Función para leer líneas desde un descriptor de archivo</td>
-  </tr>
-  <tr>
-    <td><a href="URL_a_Born2beRoot">Born2beRoot</a></td>
-    <td>Proyecto de administración de sistemas</td>
-  </tr>
-</table>
+### Libft
 
----
+The Libft project is a standard C library that includes many useful functions that are not included in the standard C library. It includes functions for manipulating strings, memory, and other common data types.
 
-## Cómo Contribuir
+### Printf
 
-Si tienes alguna sugerencia o mejora, no dudes en hacer un `fork` y enviar un `pull request`.
+The Printf project is an implementation of the printf function in C. It includes support for many of the common format specifiers, such as %d, %s, and %f.
 
----
+### Get Next Line
 
-## Contacto
+The Get Next Line project is a function that reads lines from a file descriptor. It is useful for reading large files or for reading files that are being updated in real-time.
+
+### Born2beRoot
+
+The Born2beRoot project is a system administration project that involves setting up a virtual machine and configuring various system settings. It includes tasks such as setting up a firewall, configuring network settings, and setting up user accounts.
+
+## Contributing
+
+If you have any suggestions or improvements, feel free to fork the repository and submit a pull request.
+
+## Contact
+
+If you have any questions or just want to say hi, feel free to reach out to me!
 
 👤 **Ruben Diaz Fraga**
-- 📧 Correo: rubendfraga@gmail.com
+- 📧 Email: rubendfraga@gmail.com
 - 💼 LinkedIn: [Ruben Diaz Fraga](www.linkedin.com/in/ruubendiazz)
 
----
+## License
 
-&copy; 2023 Ruben. Todos los derechos reservados.
+This repository is released under the [MIT License](LICENSE).
