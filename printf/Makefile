@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rdiaz-fr <rdiaz-fr@student.42.fr>          +#+  +:+       +#+         #
+#    By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 15:09:35 by rdiaz-fr          #+#    #+#              #
-#    Updated: 2023/10/24 15:26:23 by rdiaz-fr         ###   ########.fr        #
+#    Updated: 2023/11/04 16:40:05 by rdiaz-fr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ CFLAGS = -Wall -Wextra -Werror
 SRC_FILES = ft_printf.c ft_format.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
-# Rules
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
