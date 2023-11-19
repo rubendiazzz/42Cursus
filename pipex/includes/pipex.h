@@ -1,23 +1,19 @@
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <sys/wait.h>
-# include "../libft/libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/types.h>
 
-typedef struct	s_pipex
-{
-	char		**envp;
-	char		*file1;
-	char		*cmd1;
-	char		*cmd2;
-	char		*file2;
-}				t_pipex;
+//No structure needed
 
-int				ft_pipex(t_pipex *pipex);
-int				ft_pipex_child(t_pipex *pipex, int *fd);
-int				ft_pipex_parent(t_pipex *pipex, int *fd);
+//Functions
+
+//ft_pipex.c
+
+void	ft_pipex(int argc, char **argv, char **envp);
+
 
 #endif
