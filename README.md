@@ -26,21 +26,21 @@ Welcome to my Campus 42 Projects repository! This repository is a collection of 
 
 ### :books: Libft
 
-Libft is a comprehensive C library that includes many useful functions that are not included in the standard C library. It includes functions for manipulating strings, memory, and other common data types.
-
 **Grade: 125/100** :trophy:
+
+Libft is a comprehensive C library that includes many useful functions that are not included in the standard C library. It includes functions for manipulating strings, memory, and other common data types.
 
 ### :page_with_curl: Printf
 
-Printf is a custom implementation of the printf function in C. It includes support for many of the common format specifiers, such as %d, %s, and %f.
-
 **Grade: 100/100** :trophy:
+
+Printf is a custom implementation of the printf function in C. It includes support for many of the common format specifiers, such as %d, %s, and %f.
 
 ### :page_facing_up: Get Next Line
 
-Get Next Line is a function that reads lines from a file descriptor. It is useful for reading large files or for reading files that are being updated in real-time.
-
 **Grade: 125/100** :trophy:
+
+Get Next Line is a function that reads lines from a file descriptor. It is useful for reading large files or for reading files that are being updated in real-time.
 
 ### :lock: Born2beRoot
 
