@@ -40,6 +40,8 @@ Printf is a custom implementation of the printf function in C. It includes suppo
 
 Get Next Line is a function that reads lines from a file descriptor. It is useful for reading large files or for reading files that are being updated in real-time.
 
+**Grade: 125/100** :trophy:
+
 ### :lock: Born2beRoot
 
 Born2beRoot is a system administration project that involves setting up a virtual machine and configuring various system settings. It includes tasks such as setting up a firewall, configuring network settings, and setting up user accounts.
