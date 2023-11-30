@@ -12,11 +12,11 @@ Welcome to my Campus 42 Projects repository! This repository is a collection of 
 
 | Project | Description |
 |---------|-------------|
-| [Libft](#libft) | A comprehensive C library |
-| [Printf](#printf) | A custom implementation of the printf function in C |
-| [Get Next Line](#get-next-line) | A function that reads lines from a file descriptor |
+| [Libft](https://github.com/rubendiazzz/libft) | A comprehensive C library |
+| [Printf](https://github.com/rubendiazzz/printf) | A custom implementation of the printf function in C |
+| [Get Next Line](https://github.com/rubendiazzz/get-next-line) | A function that reads lines from a file descriptor |
 | [Born2beRoot](#born2beroot) | A system administration project |
-| [Pipex](#pipex) | A program that simulates the functionality of the shell command pipeline |
+| [Pipex](https://github.com/rubendiazzz/pipex) | A program that simulates the functionality of the shell command pipeline |
 
 <div align="center">
 
