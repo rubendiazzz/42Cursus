@@ -18,6 +18,6 @@
 # include <fcntl.h>
 # include <sys/wait.h>
 
-
+void	pipex(int ac, char **av, char **envp);
 
 #endif
