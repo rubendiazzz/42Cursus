@@ -1,0 +1,12 @@
+[submodule "libft"]
+	path = libft
+	url = https://github.com/rubendiazzz/libft.git
+[submodule "printf"]
+	path = printf
+	url = https://github.com/rubendiazzz/printf.git
+[submodule "GNL"]
+	path = GNL
+	url = https://github.com/rubendiazzz/get_next_line.git
+[submodule "pipex"]
+	path = pipex
+	url = https://github.com/rubendiazzz/pipex.git
