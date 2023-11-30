@@ -58,3 +58,5 @@ test*
 
 # main
 main.c
+
+*.sh
