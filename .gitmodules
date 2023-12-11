@@ -12,4 +12,4 @@
 	url = https://github.com/rubendiazzz/pipex.git
 [submodule "push_swap"]
 	path = push_swap
-	url = https://github.com/rubendiazzz/push_swap.git
+	url = git@github.com:rubendiazzz/push_swap.git
