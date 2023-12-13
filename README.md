@@ -44,6 +44,8 @@ Get Next Line is a function that reads lines from a file descriptor. It is usefu
 
 ### :lock: Born2beRoot
 
+**Grade: 125/100** :trophy:
+
 Born2beRoot is a system administration project that involves setting up a virtual machine and configuring various system settings. It includes tasks such as setting up a firewall, configuring network settings, and setting up user accounts.
 
 ### :wrench: Pipex
