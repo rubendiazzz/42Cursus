@@ -72,4 +72,6 @@ Should you have any inquiries or simply wish to connect, don't hesitate to reach
 
 This repository is proudly released under the [MIT License](LICENSE).
 
+.
+
 </div>
