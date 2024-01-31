@@ -2,6 +2,12 @@
 
 ![Banner](.github/readme/banner42.gif)
 
+# Instructions to clone 👋
+
+In order to clone this repository with submodules you will have to write this git clone command: 
+
+```git clone --recurse-submodules [clone-url]```
+
 # :mortar_board: Campus 42 Projects
 
 Welcome to my Campus 42 Projects repository! This repository is a collection of all the projects I have developed during my time at Campus 42. Each project is in its own folder, complete with a detailed README file explaining the project's requirements, my approach, and the skills I have acquired.
