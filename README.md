@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
 
 ![Banner](.github/readme/banner42.gif)
 
@@ -12,7 +12,7 @@ In order to clone this repository with submodules you will have to write this gi
 
 Welcome to my Campus 42 Projects repository! This repository is a collection of all the projects I have developed during my time at Campus 42. Each project is in its own folder, complete with a detailed README file explaining the project's requirements, my approach, and the skills I have acquired.
 
-</div>
+
 
 ## :bookmark_tabs: Table of Contents
 
@@ -23,12 +23,10 @@ Welcome to my Campus 42 Projects repository! This repository is a collection of 
 | [Get Next Line](https://github.com/rubendiazzz/get-next-line) | A function that reads lines from a file descriptor |
 | [Born2beRoot](#born2beroot) | A system administration project |
 | [Pipex](https://github.com/rubendiazzz/pipex) | A program that simulates the functionality of the shell command pipeline |
-
-<div align="center">
+| [So_Long](https://github.com/rubendiazzz/so-long) | A 2D game project |
+| [Push_Swap](https://github.com/rubendiazzz/push_swap) | A sorting algorithm project |
 
 ## :computer: Projects
-
-</div>
 
 ### :books: Libft
 
@@ -56,28 +54,24 @@ Born2beRoot is a system administration project that involves setting up a virtua
 
 ### :wrench: Pipex
 
+**Grade: Not graded yet** :hourglass:
+
 Pipex is a sophisticated program that emulates the shell command pipeline's functionality. It ingeniously accepts two file names and two commands along with their arguments. The output from the initial command serves as the input for the subsequent command, creating a seamless pipeline between two processes.
 
-**Grade: Pending Evaluation** :hourglass:
+### :joystick: So_Long
 
-<div align="center">
+**Grade: Not graded yet** :hourglass:
+
+So_Long is a 2D game project. It involves creating a basic 2D game using the minilibx, a simplified graphics library. The project focuses on basic game mechanics and rendering techniques.
+
+### :arrows_counterclockwise: Push_Swap
+
+**Grade: 100/100** :trophy:
+
+Push_Swap is a sorting algorithm project. The task is to sort stacks of integers using a limited set of instructions, with the goal of doing it in as few moves as possible. The project emphasizes algorithmic efficiency and optimization.
 
 ## :handshake: Contributing
 
-We warmly welcome contributions, issues, and feature requests! Feel free to fork the repository and submit a pull request. Let's build together! :construction_worker:
-
-## :mailbox: Contact
-
-Should you have any inquiries or simply wish to connect, don't hesitate to reach out!
-
-👤 **Ruben Diaz Fraga**
-- 📧 Email: [rubendfraga@gmail.com](mailto:rubendfraga@gmail.com)
-- 💼 LinkedIn: [Ruben Diaz Fraga](www.linkedin.com/in/ruubendiazz)
-
-## :scroll: License
-
-This repository is proudly released under the [MIT License](LICENSE).
-
-.
+I warmly welcome contributions, issues, and feature requests! Feel free to fork the repository and submit a pull request. Let's build together! :construction_worker:
 
 </div>
