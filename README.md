@@ -1,7 +1,5 @@
 <div align="left">
 
-![Banner](.github/readme/banner42.gif)
-
 # Instructions to clone 👋
 
 In order to clone this repository with submodules you will have to write this git clone command:
