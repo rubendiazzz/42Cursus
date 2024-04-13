@@ -54,7 +54,7 @@ Born2beRoot is a system administration project that involves setting up a virtua
 
 ### :wrench: Pipex
 
-**Grade: Not graded yet** :hourglass:
+**Grade: 100/100** :trophy:
 
 Pipex is a sophisticated program that emulates the shell command pipeline's functionality. It ingeniously accepts two file names and two commands along with their arguments. The output from the initial command serves as the input for the subsequent command, creating a seamless pipeline between two processes.
 
